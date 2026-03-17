@@ -21,7 +21,7 @@ protected:
         setPosition(screenSize / 2);
 
         dx = random::generate(-100.f, 100.f);
-        dy = 375.f;
+        dy = 375.f + random::generate(-15.f, 15.f);
 
         scheduleUpdate();
 
