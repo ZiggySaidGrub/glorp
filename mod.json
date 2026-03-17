@@ -8,7 +8,7 @@
 	},
 	"id": "grub.glorp",
 	"name": "Glorp Dash",
-	"version": "v1.1.0",
+	"version": "v1.1.1",
 	"developer": "grub",
 	"description": "Add Glorp to the Treasure Room",
 	"dependencies": {
@@ -33,5 +33,15 @@
 				"slider-step": 10
             }
         }
-	}
+	},
+	"links": {
+		"source": "https://github.com/ZiggySaidGrub/glorp"
+	},
+	"issues": {
+		"info": "Report issues on the issues tab in GitHub",
+		"url": "https://github.com/ZiggySaidGrub/glorp/issues"
+	},
+	"tags": [
+		"joke"
+	]
 }
