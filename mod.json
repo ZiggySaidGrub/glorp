@@ -7,8 +7,8 @@
 		"ios": "2.2081"
 	},
 	"id": "grub.glorp",
-	"name": "Glorp Dash",
-	"version": "v1.1.1",
+	"name": "The Glorp Room",
+	"version": "v1.2.0",
 	"developer": "grub",
 	"description": "Add Glorp to the Treasure Room",
 	"dependencies": {
@@ -17,7 +17,8 @@
 	"resources": {
 		"sprites": [
 			"resources/glorp.png",
-			"resources/33.png"
+			"resources/33.png",
+			"resources/glorp_yellow.png"
 		]
 	},
 	"settings": {

@@ -1,3 +1,8 @@
-# Glorp Dash
+# The Glorp Room
 
-Add Glorp to the Treasure Room
+Glorpify the Treaure Room!
+
+Features include:
+- Big Glorp that spawns smaller glorplings.
+- Glorped shop ropes
+- Wraith chest glorp

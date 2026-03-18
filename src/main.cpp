@@ -4,6 +4,7 @@
 #include "Geode/utils/random.hpp"
 #include <Geode/Geode.hpp>
 #include <Geode/binding/BoomScrollLayer.hpp>
+#include <Geode/binding/GJChestSprite.hpp>
 
 using namespace geode::prelude;
 
@@ -59,7 +60,53 @@ public:
 class $modify(GlorpSecretRewardsLayer, SecretRewardsLayer) {
     bool init(bool fromShop) {
         if (!SecretRewardsLayer::init(fromShop)) return false;
-        
+
+        CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
+
+        // edit title
+        auto title = (CCSprite*) getChildByIDRecursive("title-label");
+        auto titleGlorp = CCSprite::create("glorp.png"_spr);
+        title->addChild(titleGlorp);
+
+        titleGlorp->setPosition({138.f, 21.f});
+        titleGlorp->setScaleX(6.15);
+        titleGlorp->setScaleY(1.225);
+
+        // shops
+        auto shopGlorp1 = CCSprite::create("glorp.png"_spr);
+        getChildByIDRecursive("scratch-shop")->getChildByID("store-sprite")->addChild(shopGlorp1);
+        shopGlorp1->setPosition({24.f, 46.f});
+        shopGlorp1->setRotation(-13.f);
+        shopGlorp1->setScale(1.4);
+
+        auto shopGlorp2 = CCSprite::create("glorp.png"_spr);
+        getChildByIDRecursive("creator-shop")->getChildByID("store-sprite")->addChild(shopGlorp2);
+        shopGlorp2->setPosition({22.f, 46.f});
+        shopGlorp2->setRotation(4.f);
+        shopGlorp2->setScale(1.25);
+
+        auto shopGlorp3 = CCSprite::create("glorp.png"_spr);
+        getChildByIDRecursive("mechanic-shop")->getChildByID("store-sprite")->addChild(shopGlorp3);
+        shopGlorp3->setPosition({21.f, 46.f});
+        shopGlorp3->setScaleX(1.45);
+        shopGlorp3->setScaleY(1.25);
+
+        auto shopGlorp4 = CCSprite::create("glorp.png"_spr);
+        getChildByIDRecursive("diamond-shop")->getChildByID("store-sprite")->addChild(shopGlorp4);
+        shopGlorp4->setPosition({26.f, 45.f});
+        shopGlorp4->setRotation(7.f);
+        shopGlorp4->setScale(1.275);
+
+        // yellow glorp
+        auto yellowGlorp = CCSprite::create("glorp_yellow.png"_spr);
+        auto wraith = getChildByIDRecursive("page4");
+        wraith->addChild(yellowGlorp);
+        yellowGlorp->setPosition({282.5, 180.f});
+        yellowGlorp->setScale(3.4);
+
+        wraith->getChildByID("chests-menu")->getChildByID("chest10")->getChildByType<GJChestSprite>(0)->setOpacity(0);
+
+        // main glorp
         auto glorpLayer = CCLayer::create();
         glorpLayer->setID("glorp-page"_spr);
 
@@ -68,7 +115,6 @@ class $modify(GlorpSecretRewardsLayer, SecretRewardsLayer) {
         glorpLayer->addChild(glorplingLayer);
 
         auto menu = CCMenu::create();
-        CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
         menu->setAnchorPoint({ 0.f, 0.f });
         menu->setScale(5.5);
         menu->setPosition(screenSize / 2);

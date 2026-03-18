@@ -1,3 +1,8 @@
+# 1.2.0
+- Added Glorps on the shops
+- Glorp wraith
+- Changed title
+
 # 1.1.1
 - Fix metadata
 
